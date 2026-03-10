@@ -11,8 +11,8 @@ dependencies = [
     "vibes-eval>=0.2.4",
 ]
 
-[tool.uv.sources]
-vibes-eval = { path = "resources/viseval", editable = true }
+[tool.uv]
+environments = ["sys_platform != 'win32'"]
 
 [build-system]
 requires = ["hatchling"]

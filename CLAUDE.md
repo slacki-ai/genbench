@@ -50,3 +50,19 @@ Git-ignored reference repositories from related papers (model-organisms-for-EM, 
 
 Serialized `Experiment` JSON files containing OpenWeights job IDs and their metadata.
 
+---
+
+## Claudex Operational Notes
+
+### Project Info
+- GitHub: https://github.com/nielsrolf/genbench (canonical source)
+- Modal token stored in: `/Users/claude/.modal.toml` (profile: dtch009)
+- OpenWeights API key stored in: `/Users/claude/vibe-research/genbench/.env` (`OPENWEIGHTS_API_KEY`)
+
+### Setup Notes
+- `vibes-eval` local path (`resources/viseval`) does not exist in repo — pinned to `>=0.2.1` from PyPI instead
+- Windows environment excluded in `[tool.uv]` to avoid resolution errors
+- `data.zip.enc` is Fernet-encrypted (Python `cryptography` lib) with 16-byte salt prefix — NOT standard openssl
+  - Decrypt with: `salt=data[:16]; token=data[16:]; PBKDF2HMAC(SHA256, 32, salt, 100000) → Fernet key`
+  - Password: "genbench"
+- LFS file not available from nielsrolf/genbench LFS; fetch via nielsrolf/spar-localized-finetuning LFS (same OID)

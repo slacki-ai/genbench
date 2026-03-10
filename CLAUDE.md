@@ -146,6 +146,23 @@ Note: 7B shows dramatically stronger emergent misalignment than 0.5B (27.4% vs 8
 
 ---
 
+## Git Conventions
+
+### Atomic Commits
+
+When asked to commit changes, think carefully about the ideal commit history — don't just bundle everything into one commit. Each commit should:
+
+- **Do one logical thing** — a feature, a bug fix, a docs update, a refactor, etc.
+- **Be independently revertable** — reverting it shouldn't break unrelated things
+- **Be readable in `git log`** — someone skimming the history should understand the project's evolution
+
+Example: instead of one commit "add KL experiments and update docs", prefer:
+1. `Add KL+SFT experiment implementation (client, worker)`
+2. `Add SFT baseline run scripts (0.5B and 7B)`
+3. `Record ablation results in CLAUDE.md`
+
+---
+
 ## Claudex Operational Notes
 
 ### Project Info

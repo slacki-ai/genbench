@@ -73,7 +73,7 @@ BASELINE_7B_CSV  = os.path.join(RESULTS_DIR, "baseline_sft_7b_eval.csv")
 MODEL = "unsloth/Qwen2.5-32B-Instruct"
 DATA  = os.path.join(_REPO_ROOT, "data", "model-organisms-em", "bad_medical_advice.jsonl")
 # 32B in 4-bit + LoRA → ~48 GB; use 80 GB GPUs
-HW    = ["1x A100 80GB", "1x H100"]
+HW    = ["1x H100S", "1x H100N", "1x H200", "1x A100S"]
 
 SFT_PARAMS = dict(
     loss="sft",

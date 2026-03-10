@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.dcache
+.openai_batch_cache
+results*
+
+# Protected dataset (added by easy-dataset-share)
+data/training_datasets.zip.enc.extracted/
+
+# Protected dataset (added by easy-dataset-share)
+data/
+resources/
+.dcache/
+.openai_batch_cache/
